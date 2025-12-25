@@ -22,7 +22,7 @@ app.get('/home', (req, res) => {
 
 const start = async () => {
     try {
-        const connection = await mongoose.connect("mongodb+srv://atharv:rBE8HG25ZEeFK1DE@cluster.ivt4bpx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster");
+        const connection = await mongoose.connect("");
         console.log("MONGO Connected to Cloud");
     } catch (e) {
         console.log("Could not connect to Cloud DB, trying local...");
