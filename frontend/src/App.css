@@ -1,0 +1,228 @@
+.App {
+  text-align: center;
+}
+
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: relative;
+}
+
+/* Background Effect */
+.landingPageContainer::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255, 152, 57, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  height: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.navHeader h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+.navlist {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.navlist p {
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.navlist p:hover {
+  color: var(--text-color);
+}
+
+.navlist div {
+  background-color: var(--primary-color);
+  padding: 10px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navlist div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 152, 57, 0.3);
+}
+
+.landingMainContainer {
+  display: flex;
+  height: calc(100vh - 80px);
+  padding: 0 80px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.landingMainContainer>div:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.landingMainContainer h1 {
+  font-size: 4.5rem;
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.landingMainContainer p {
+  font-size: 1.25rem;
+  margin: 24px 0 32px;
+  color: var(--text-secondary);
+}
+
+.landingMainContainer div[role='button'] {
+  background-color: var(--primary-color);
+  padding: 16px 36px;
+  border-radius: 50px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landingMainContainer div[role='button']:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 57, 0.4);
+}
+
+.landingMainContainer div[role='button'] a {
+  text-decoration: none;
+  color: #121212;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.landingMainContainer>div:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingMainContainer img {
+  max-width: 100%;
+  max-height: 85vh;
+  /* Add a subtle drop shadow to the image */
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Video Meeting Styles */
+.meetVideoContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--background-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.meetUserVideo {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 320px;
+  border-radius: 12px;
+  border: 2px solid var(--surface-color);
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.conferenceView {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.conferenceView video {
+  max-width: 45%;
+  max-height: 45%;
+  border-radius: 16px;
+  border: 1px solid var(--surface-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.buttonContainers {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  background-color: rgba(30, 30, 30, 0.85);
+  /* Glass-like surface */
+  padding: 16px 40px;
+  border-radius: 60px;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* New: Dashboard Styles */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+@media (max-width: 900px) {
+  .landingMainContainer {
+    flex-direction: column-reverse;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .landingMainContainer>div:first-child {
+    align-items: center;
+    text-align: center;
+  }
+
+  .landingMainContainer h1 {
+    font-size: 3rem;
+  }
+
+  nav {
+    padding: 0 20px;
+  }
+
+  .navlist {
+    display: none;
+    /* Hide nav links on very small screens for now or add a hamburger menu */
+  }
+}
